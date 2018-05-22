@@ -67,7 +67,7 @@ space.length(); // 1
 ```
 String fruit = "apple is red";
 ```
-<img src="/img/apple.png">
+<img src="./img/apple.png">
 ```
 char firstCharacter =  fruit.charAt(0); // ‘a’
 char sixthCharacter = fruit.charAt(5); // ‘ ’
@@ -80,7 +80,7 @@ char secondToLastChar = fruit.charAt(fruit.length() - 2); // ‘e’
 ```
 String fruit = "apple is red";
 ```
-<img src="/img/apple.png">
+<img src="./img/apple.png">
 ```
 String color = fruit.substring(9);  // "red"
 ```
@@ -91,7 +91,7 @@ String color = fruit.substring(9);  // "red"
 ```
 String fruit = "apple is red";
 ```
-<img src="/img/apple.png">
+<img src="./img/apple.png">
 ```
 String noun = fruit.substring(0, 4); // "apple"
 String verb = fruit.substring(6, 7); // "is"
