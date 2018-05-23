@@ -232,6 +232,7 @@ DEMO!
 <img src="https://bloximages.chicago2.vip.townnews.com/cumberlink.com/content/tncms/assets/v3/editorial/3/f9/3f9fc595-e8b2-59fd-81b3-55b5aca130ed/57168615b163e.image.jpg?resize=800%2C550">
 
 -
+-
 ## String Formatting
 
 ```
@@ -257,7 +258,7 @@ System.out.println(formattedTotal); //Total is            0.67
 The only field that is required is conversion
 
 - `argument_index` - an integer indicating the position of the argument. The first argument is referenced by "1$", the second by "2$", etc.
-- `flags` - modifies output like left justify, 0 padded, or space padded
+- `flags` - modifies output like left justify, 0 padded
 - `width` - the minimum number of characters
 - `conversion` - indicates how the argument should be formatted
 
@@ -311,6 +312,8 @@ But what about Russian, Japanese, and Chinese characters?
 Unicode to the rescue!
 
 It assigns each character in all of the writing systems ever devised a unique 16-bit code between 0 and 65535.
+
+When you see this it will usually be in hexidecimal from 0x0000 to 0xFFFF but Java supports encoding up to 0x10FFFF
 
 -
 ## Codepoint
