@@ -246,7 +246,7 @@ System.out.println(total); //0.6699999999999999
 ```
 double total = 10.00 - 9.33;
 
-String formattedTotal = String.format("Total is % ,15.2f", total);
+String formattedTotal = String.format("Total is %,15.2f", total);
 System.out.println(formattedTotal); //Total is            0.67
 ```
 
@@ -285,7 +285,7 @@ The only field that is required is conversion
 | %e | floating point | decimal number in scientific notation |
 | %f | floating point | decimal number |
 
-`String format = "Total is % ,15.2f"`
+`String format = "Total is %,15.2f"`
 
 Pads with space, group with comma, with minimum with of 15 and precision of 2. Conversion type is float.
 
