@@ -11,8 +11,6 @@ You may not write production code until you have a written a failing correspondi
 
 ```
 	public class Cow{
-		public Cow(){}
-
 		public String speak(){
 			//BAD DOBBY
 			return "Mooooow";
@@ -23,9 +21,32 @@ You may not write production code until you have a written a failing correspondi
 
 -
 -
-###First Law
+###Second Law
 
-You may not write production code until you have a written a failing corresponding unit test.
+You may not write more of a unit test than is needed to fail, and not compiling is failing.
+
+```
+public class CowTest{
+
+	@Test
+	public void speakTest(){
+		Cow cow = new Cow();
+	}
+}
+```
+
+-
+
+Fix syntax error
+
+```
+public class Cow{
+	public Cow(){}
+}
+```
+-
+
+Finish writing the test
 
 ```
 public class CowTest{
@@ -41,6 +62,8 @@ public class CowTest{
 ```
 
 -
+
+Fix syntax error
 
 ```
 public class Cow{
@@ -55,23 +78,15 @@ public class Cow{
 ```
 
 -
-#3 laws of TDD
-
-###Second Law
-
-You may not write more of a unit test than is needed to fail, and not compiling is failing.
+Write code to pass the test
 
 ```
-public class CowTest{
-
-	@Test
-	public void speakTest(){
-		Cow cow = new Cow();
-		String expected = "mooo";
-		String actual = cow.speak();
-		Assert.equals(expected, actual);
+	public class Cow{
+		public String speak(){
+			return "Moo";
+		}
 	}
-}
+
 ```
 
 -
@@ -95,16 +110,16 @@ public String speak(){
 
 #Clean Code and Clean Test
 
-A clean test is a readable Test
+A clean test is a readable Test. Your test is your code!
 
 ```
 @Test
 public void testFunction(){
-//Bad Dobby
-Unicorn unico = New Unicorn();
-int x = 23;
-int y = unico.saveThePrincess();
-Assert.equals(x,y);
+	//Bad Dobby
+	Unicorn unico = New Unicorn();
+	int x = 23;
+	int y = unico.saveThePrincess();
+	Assert.equals(x,y);
 }
 
 ```
@@ -113,11 +128,11 @@ Assert.equals(x,y);
 ```
 @Test
 public void testCountToTwo(){
-//Good Dobby
-Unicorn unico = New Unicorn();
-int expectedNumber = 2;
-int actualNumber = unico.countToTwo();
-Assert.equals(expectedNumber, actualNumber);
+	//Good Dobby
+	Unicorn unico = New Unicorn();
+	int expectedNumber = 2;
+	int actualNumber = unico.countToTwo();
+	Assert.equals(expectedNumber, actualNumber);
 }
 ```
 -
