@@ -11,9 +11,9 @@
 You may not write production code until you have a written a failing corresponding unit test.
 
 ```
-	public class cow{
-		public cow(){}
-		
+	public class Cow{
+		public Cow(){}
+
 		public String speak(){
 			//BAD DOBBY
 			return "Mooooow";
@@ -29,21 +29,8 @@ You may not write production code until you have a written a failing correspondi
 You may not write production code until you have a written a failing corresponding unit test.
 
 ```
-public class cow{
-	public cow(){}
-	
-	public String speak(){
-		//Good DOBBY
-		return null;
-	}
-}
+public class CowTest{
 
-```
--
-
-```
-public class cowTest{
-	
 	@Test
 	public void speakTest(){
 		Cow cow = new Cow();
@@ -53,6 +40,21 @@ public class cowTest{
 	}
 }
 ```
+
+-
+
+```
+public class Cow{
+	public Cow(){}
+
+	public String speak(){
+		//Good DOBBY
+		return null;
+	}
+}
+
+```
+
 -
 #3 laws of TDD
 
@@ -61,19 +63,15 @@ public class cowTest{
 You may not write more of a unit test than is needed to fail, and not compiling is failing.
 
 ```
-@Test
-public void speakTest(){
-	Cow cow = new Cow();
-	Cow cow2 = new Cow();
-	
-	String expected = "mooo";
-	String actual = cow.speak();
-	
-	String expected2 = "mooo";
-	String actual2 = cow2.speak();
-	Assert.equals(expected2, actual2);
-	// BAD DOBBY
-	Assert.equals(actual, actual2);
+public class CowTest{
+
+	@Test
+	public void speakTest(){
+		Cow cow = new Cow();
+		String expected = "mooo";
+		String actual = cow.speak();
+		Assert.equals(expected, actual);
+	}
 }
 ```
 
@@ -82,7 +80,7 @@ public void speakTest(){
 
 ###Third Law
 
-You may not write more production code than is sufficent to pass current failing test.
+You may not write more production code than is sufficent to pass the current failing test.
 
 ```
 public String speak(){
@@ -127,7 +125,7 @@ Assert.equals(expectedNumber, actualNumber);
 -
 #One Assertion to Rule them All
 
-A could unit test should only come to one binary conclusion , which should also be quick and easy to understand. **SINGLE RESPONSIBLITY**
+A good unit test should have one assertion, which should also be quick and easy to understand. **SINGLE RESPONSIBLITY**
 
 Single Concept per test
 
@@ -139,8 +137,8 @@ Single Concept per test
 -
 #F.I.R.S.T
 
-* **F** is for **fast** - The test should be fast. If its going to fail, let's get it over with.
-* **I** is for **Independent** - every test is an island, a "LONELY ISLAND". The test should not have to fire off other methods to complete itself.
-* **R** is for **Repeatable** - every test should be able to run in any environment , local, QA, and Production.
-* **S** is for **Self-Validating** - every test should have a binary boolean output pass or fail.
-* **T** is for **Timely** - test should be written FIRST... OR ELSE!!! 
+* **F** is for **fast** - The test should be fast. If it's going to fail, let's get it over with
+* **I** is for **Independent** - every test is an island, a "LONELY ISLAND". Executing it should not affect other test
+* **R** is for **Repeatable** - every test should be able to run in any environment , local, QA, and Production
+* **S** is for **Self-Validating** - every test should have one asserttion
+* **T** is for **Timely** - test should be written FIRST... OR ELSE!!!
