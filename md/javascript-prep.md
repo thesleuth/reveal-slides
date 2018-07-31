@@ -911,6 +911,29 @@ switch (numericalDay) {
         text = "Looking forward to the Weekend";
 }
 ```
+-
 
+## The Ternary Operator
+
+Evaluates a condition. If the condition evaluates to `true`, the operator returns the value of expr1.
+Else, it returns the value of expr2.
+```javascript
+condition ? expr1 : expr2 
+```
+
+```javascript
+let examScore = 91;
+let didIGetAnA = (examScore >= 90) ? "You got an A!" : "You didn't get an A";
+```
+Shorthand for:
+```javascript
+let examScore = 90;
+let didIGetAnAn;
+if(exam Score > 90) {
+    didIGetAnA = "You got an A!";
+} else {
+    didIGetAnA = "You did not get an A.";
+}
+```
 
 
