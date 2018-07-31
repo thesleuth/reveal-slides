@@ -24,6 +24,31 @@ When you write a program, you must break down every step into simple pieces.
 -
 -
 
+## Statements
+
+Each instruction in JavaScript is a statement.
+
+```javascript
+console.log('Hello World!');
+console.log('Nice to meet you');
+console.log('I love donuts');
+```
+
+-
+
+## Comments
+
+```javascript
+/*
+You can make long comments
+with multiple lines here
+*/
+
+console.log('Hello World!'); // Or make short comments here
+```
+
+-
+
 ## Variables
 
 Just like 'x' in algebra, a variable is a named container for a value that can change.
