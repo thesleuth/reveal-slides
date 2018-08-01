@@ -369,17 +369,13 @@ You define a component's application logic—what it does to support the view—
   templateUrl: './todo-list.component.html',
   providers:  [ TodoService ]
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
   private todoService: TodoService
   todos: Todo[];
   selectedTodo: Todo;
 
   constructor(todoService: TodoService) { 
     this.todoService = todoService;
-  }
-
-  ngOnInit() {
-    this.todoService = this.todoService.getTodos();
   }
 
   selectTodo(todo: Todo) { this.selectedTodo = todo; }
@@ -563,17 +559,13 @@ export class AppModule { }
   templateUrl: './todo-list.component.html',
   providers:  [ TodoService, Logger ]
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
   private todoService: TodoService
   todos: Todo[];
   selectedTodo: Todo;
 
   constructor(todoService: TodoService) { 
     this.todoService = todoService;
-  }
-
-  ngOnInit() {
-    this.todoService = this.todoService.getTodos();
   }
 
   selectTodo(todo: Todo) { this.selectedTodo = todo; }
