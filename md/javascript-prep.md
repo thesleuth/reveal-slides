@@ -355,7 +355,7 @@ console.log(10)
 ```javascript
 // prints the numbers between 1 and 10
 function print10() {
-    for(let i < 1; i <= 10; i++) {
+    for(let i = 1; i <= 10; i++) {
         console.log(i);
     }
 }
@@ -368,7 +368,9 @@ Print all the numbers between 1 and n
 ```javascript
 // prints all the numbers between 1 and n
 function printN(n) {
-    for(let i < 1; i <= n; i++) {
+    for(let i = 1; i <= n; i++) {
+        console.log(i);
+    }
 }
 ```
 -
@@ -935,5 +937,450 @@ if(exam Score > 90) {
     didIGetAnA = "You did not get an A.";
 }
 ```
+-
+-
+
+## Quick note about functions
+
+Functions can be stored to variables or constants
+```javascript
+let printN = function() {
+    // ...
+}
+```
+-
+
+When storing functions as variables or constants, we can use shorthand notation, called ``arrow functions``.
+
+```javascript
+let printN = () => {
+    // ...
+}
+```
+-
+
+When we have one parameter, we parenthesis are optional. 
+
+```javascript
+let printN = n => {
+    // ...
+}
+```
+-
+
+If you have 0 or more than 1 parameter, you must include the parenthesis. 
+```javascript
+// I
+let add = (firstNum, secondNum) => {
+    firstNum * secondNum;
+}
+
+let greet = () => {
+    console.log("Hello World!");
+}
+```
+
+-
+-
+
+## Scope
+
+Variables defined in the global scope are declared outside of a set of curly braces {}, referred to as a block, 
+and are available throughout a program. 
+
+```javascript
+let fullName = "Dominique Clarke";
+
+function greet() {
+    return "Hello " + fullName;
+}
+
+function farewell() {
+    return "Bye " + fullName;
+}
+```
+-
+
+Variables defined in the global scope are open to mutation.
+
+```javascript
+let state = "Delaware";
+
+let capitol = "Dover";
+
+function printStateCapitol() {
+    capitol = "Newark";
+    console.log("The capitol of " + state " is " + capitol);
+}
+
+printStateCapitol();
+
+console.log(capitol); // prints dover
+```
+This can create unintended consequences.
+
+-
+
+*But Dominique, I wouldn't do something silly like that.*
+
+* You'll be working with a team of people, who won't understand your code as well as you do.
+* You'll write tens of thousands of lines of code over your career, and forget a lot what your old code is doing.
+
+-
+
+We can prevent against values being changed using ``const``.
+
+```javascript
+const state = "Delaware";
+
+const capitol = "Dover";
+
+function printStateCapitol() {
+    capitol = "Newark"; // Throws an error, which will stop your program
+    console.log("The capitol of " + state " is " + capitol);
+}
+```
+-
+
+Instead of relying on global variables, we can write our functions to rely on parameters we give it.
+
+```javascript
+let state = "Delaware";
+
+let capitol = "Dover";
+
+function printStateCapitol(state, capitol) {
+    capitol = "Newark";
+    console.log("The capitol of " + state + " is " + capitol);
+}
+
+console.log(capitol); // prints Dover
+```
+
+-
+
+Parameters are a special kind of variable that are assigned to the value passed in it, and scoped only to the function.
+
+```javascript
+let state = "Delaware";
+
+let capitol = "Dover";
+
+function printStateCapitol(state, capitol) {
+    capitol = "Newark";
+    // Prints "The capitol of Delaware is Newark"
+    console.log("The capitol of " + state + " is " + capitol);
+}
+
+console.log(capitol); // prints Dover
+```
+-
+
+When JavaScript encounters a variable, it looks to see if that variable is available in it's code block. 
+
+If it's not, it moves up the line of scope until it finds it.
+
+```javascript
+let state = "Delaware";
+
+let capitol = "Dover";
+
+function printStateCapitol(state, capitol) {
+    capitol = "Newark";
+    // Prints "The capitol of Delaware is Newark"
+    console.log("The capitol of " + state + " is " + capitol);
+}
+
+console.log(capitol); // prints Dover
+```
+-
+
+Variables can also be *locally scoped*. A new scope is created for each block of code between a set of curly braces.
+
+Local variables are available within their code block, and any nested code blocks.
+
+
+```javascript
+// global scope (scope 1)
+let radius = 2;
+
+function calcAreaOfCircle(radius) {
+    // local scope (scope 2)
+    has access to scope 1 and scope 2 */
+    const pi = 3.14;
+    
+    function calcDiameter() {
+       /* local scope (scope 3)
+       has access to scope 1, scope 2, and scope 3 */
+       let diameter;
+       
+       /* has access to the radius variable, 
+       even though it wasn't passed into the function
+       as a parameter */
+       diameter = radius * radius;
+       return diameter;
+    }
+    
+    // Uncaught ReferenceError: diameter is not defined
+    return pi * diameter;
+}
+
+calcAreaOfCircle(radius);
+
+// Uncaught ReferenceError: pi is not defined
+console.log(pi);
+
+```
+-
+
+Other types of code blocks, like ``loops`` and ``if statements`` also create local scope.
+
+```javascript
+/* Global scope (scope 1)
+Has access to scope 1 */
+let n = 100;
+
+function countByTenToN() {
+    /* Local scope (scope 2)
+    Has access to scope 1 and scope 2 */
+    let currentNum = 0;
+    
+    while (currentNum <= 100) {
+        /* Local scope (scope 3)
+        Has access to scope 1, scope 2 and scope 3 */
+        let iterator = 10;
+        console.log(10
+        currentNum += 10;
+    }
+    
+    // Uncaught ReferenceError: iterator is not defined
+    console.log(iterator);
+    
+}
+```
+-
+
+The ``let`` and ``const`` keywords create brand new variables, and can share names with other variables
+as long as they are located within a different level of scope.
+
+```javascript
+// Global scope (scope 1)
+let radius = 2;
+const pi = 3.14
+
+function calcAreaOfCircle(radius) {
+    // Local scope (scope 2)
+    const pi = 3.141; // creates a new variable pi scoped within the curly braces.
+    
+    return pi * radius * radius;
+}
+
+// Global scope (scope 1)
+const pi = 3.1415; // duplicate declaration of pi exists within this scope, creates an error
+
+```
+
+-
+
+## The wilder days of JavaScript
+
+The ``let`` and ``const`` keywords are new features of JavaScript available in the most recent specs.
+
+Before ``let`` and ``const``, we'd declare variables with ``var``, which didn't follow the same scoping rules.
+
+-
+
+With ``var``, only functions create brand new levels of scope.
+
+```javascript
+// Global scope (scope 1)
+var n = 100;
+
+function countByTenToN() {
+    // Local scope (scope 2)
+    Has access to scope 1 and scope 2 */
+    var currentNum = 0;
+    
+    while (i <= 100) {
+        Has access to scope 1, scope 2 and scope 3 */
+        var iterator = 10;
+        console.log(10
+        currentNum += 10;
+    }
+    
+    // available from outside it's block
+    console.log(iterator);
+}
+```
+
+-
+-
+
+## Arrays
+
+Arrays are ordered lists of values.
+
+```javascript
+var arrayName = [value0, value1];
+```
+
+```javascript
+You can put different types of data into an array.
+
+let rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+  'Blue', 'Indigo', 'Violet'];
+
+let luckyNumbers = [52, 97, 91, 28, 43, 104];
+
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+```
+
+You can find the length of an array using the ``length`` property.
+
+```javascript
+console.log(myFavoriteThings.length); // prints 4;
+```
+
+-
+
+## Accessing Array Elements
+
+You can access array elements with bracket notation, passing in the ``index`` of the element.
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+console.log(myFavoriteThings[0]); // prints Donuts
+console.log(myFavoriteThings[3]); // prints Pizza
+```
+
+Array start at index **0** and move upward.
+
+-
+
+## Changing Arrays
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+```
+
+To remove the last element of an array, use ``pop``.
+
+```javascript
+myFavoriteThings.pop();
+// myFavoriteThings now contains ['Donuts', 42, true]
+```
+
+To remove the first element of an array, use ``shift``
+
+```javascript
+myFavoriteThings.pop();
+// myFavoriteThings now contains [42, true]
+```
+
+To add to an array, use ``push``. The new element will be added to the end of the array.
+
+```javascript
+myFavoriteThings.push('coffee');
+
+// myFavoriteThings now contains [42, true, 'coffee'];
+```
+-
+
+To change an array element, use bracket notation.
+
+```javascript
+myFavoriteThings[2] = 'donuts';
+
+// myFavoriteThings now contains [42, true, 'donuts'];
+```
+-
+
+When using the const keyword, it prevents the entire array from being reassigned.
+It does not prevent individual elements from being changed, or the array from being manipulated.
+
+```javascript
+const myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+// All legal
+myFavoriteThings.push('coffee');
+myFavoriteThings.pop();
+myFavoriteThings.shift();
+myFavoriteThings[1] = 36;
+
+// Not legal, creates an error
+
+myFavoriteThings = ['nightmares', 'thumbtacks'];
+```
+
+-
+-
+
+## Loops
+
+-
+
+## The For Loop
+
+A for loop repeats until a specified condition evaluates to false.
+
+```javascript
+function printToN(n) {
+    // define iterator; define condition; define increment
+    // runs until i > n;
+    for(let i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+```
+
+-
+
+We can change the iterator, the condition, and the increment to suit our needs.
+
+```javascript
+function printFromN(n) {
+    // define iterator; define condition; define increment
+    // runs until i < n;
+    for(let i = n; i >= n; i--) {
+        console.log(i);
+    }
+}
+```
+
+``i++`` is shorthand for ``i = i + 1``;
+``i--`` is shorthand for ``i = i - 1``;
+
+-
+
+We can increment by more than 1. 
+
+```javascript
+function printEvenNumbers(n) {
+    for(let i = 1; i <= n; i+=2) {
+        console.log(i);
+    }
+}
+```
+
+-
+
+## The while loop
+
+The ``while`` statement executes its statements as long as a specified condition evaluates to true. A while statement looks as follows:
+
+```javascript
+var n = 0;
+var x = 0;
+
+while (n < 3) {
+  n++;
+  x += n;
+}
+```
+
+* After the first pass: n = 1 and x = 1
+* After the second pass: n = 2 and x = 3
+* After the third pass: n = 3 and x = 6
 
 
