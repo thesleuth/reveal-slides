@@ -164,7 +164,6 @@ let numberOfDonuts = 12;
 let donutRating = 10.2;
 ```
 
-## Arithmetic Operators
 Once we have numbers, we can use them in operations
 
 ```javascript
@@ -771,7 +770,7 @@ let age = 30;
 
 // individual if statement
 if (age >= 35) {
-  console.log('You can vote AND run for President!'); // will run
+  console.log('You can vote AND run for President!'); // will not run
 }
 
 if (age >= 30) {
@@ -1117,7 +1116,7 @@ function calcAreaOfCircle(radius) {
        /* has access to the radius variable, 
        even though it wasn't passed into the function
        as a parameter */
-       diameter = radius * radius;
+       diameter = radius * 2;
        return diameter;
     }
     
@@ -1349,6 +1348,7 @@ function printFromN(n) {
 ```
 
 ``i++`` is shorthand for ``i = i + 1``;
+
 ``i--`` is shorthand for ``i = i - 1``;
 
 -
@@ -1357,7 +1357,7 @@ We can increment by more than 1.
 
 ```javascript
 function printEvenNumbers(n) {
-    for(let i = 1; i <= n; i+=2) {
+    for(let i = 0; i <= n; i+=2) {
         console.log(i);
     }
 }
@@ -1384,3 +1384,364 @@ while (n < 3) {
 * After the third pass: n = 3 and x = 6
 
 
+-
+-
+
+## Objects
+
+Objects help us represent real-world objects in JavaScript. Using ``key: value`` pairs (sometimes also referred to as properties) we can mock out an object's
+``identity``, ``state``, and ``behavior``.
+
+
+-
+
+
+JavaScript objects are containers that can store data and functions. The data we store in an object is not ordered — we can only access it by calling its associated key.
+
+```javascript
+let object = {
+    key: value,
+    property: propertyValue,
+}
+```
+
+* We create the object between curly braces: {}.
+* We separate each key from its corresponding value by a colon ``:``, with the key first and the value second.
+* Every key-value pair is separated by a comma ``,``.
+
+-
+
+```javascript
+let car = {
+    make: 'Ford',
+    model: 'Taurus',
+    totalMillage: 30000,
+    drive: function() {
+        // TO DO: Make car move
+    }
+}
+```
+
+-
+
+## Object Review
+
+-
+
+## Accessing Object Properties
+
+You can use dot notation to access object properties
+
+```javascript
+console.log(user.username) // outputs donutLover5000
+```
+
+Or you can use bracket notation and pass in a string representing the property
+```javascript
+console.log(user['username']) // outputs donutLover5000
+```
+-
+
+## Changing Objects
+
+You can use dot or bracket notation to change property values
+
+```javascript
+user.username = "imAHotDog";
+user['username'] = "imAHotDog";
+```
+-
+
+## Adding Properties to Objects
+
+You can use dot or bracket notation to add properties and their value.
+
+```javascript
+let car = {
+    make: 'Ford',
+    model: 'Taurus',
+    totalMillage: 30000,
+}
+
+car.color = 'red';
+car['milesPerGallon'] = 30;
+```
+
+Since neither the property ``color`` or ``milesPerGallon`` exist on the car object, they are created when we try to assign them values.
+
+-
+
+## Bracket vs Dot Notation
+
+Bracket notation can be helpful when you want to use a variable as a key.
+
+```javascript
+let currentDayOfWeek = 'Friday';
+
+const dailySpecials = {
+    Monday: 'Half-off Drinks',
+    Wednesday: 'Half-off Burgers',
+    Friday: 'Prime Rib',
+}
+
+if(dailySpecials[currentDayOfWeek]) {
+    console.log(dailySepcials[currentDayOfWeek]);
+}
+```
+
+-
+
+## Creating Methods
+
+When an object stores a function as the value of a property, we call that function a ``method``.
+
+Objects can have ``idenity``, ``state``, and ``behavior``. Methods represent the behavior for our objects.
+
+```javascript
+let dog = {
+    speak: function() {
+        return 'bork';
+    }  
+}
+```
+
+-
+
+```javascript
+// ES6
+let dog = {
+    speak: () => {
+        return 'bork';
+    }  
+}
+```
+
+```javascript
+// ES6
+let dog = {
+    speak() {
+        return 'bork';
+    }  
+}
+```
+
+-
+
+## The This Keyword
+
+Often, we want our methods to interact with properties that exist on the object itself.
+
+```javascript
+// ES6
+let dog = {
+    isSitting: false;
+    speak() {
+        return 'bork';
+    }
+    sit() {
+        // ReferenceError: isSitting is not defined
+        if(isSitting) {
+          return "already sitting";
+        } else {
+          // looks for the isSitting variable up the line of scope, 
+          // if it doesn't find it creates a global variable on the window object
+          isSitting = true;
+          return "yes hooman i'll do a sit";
+        }
+    }
+}
+```
+-
+
+```javascript
+// ES6
+let dog = {
+    isSitting: false;
+    speak() {
+        return 'bork';
+    }
+    sit() {
+        // ReferenceError: isSitting is not defined
+        if(isSitting) {
+          return "already sitting";
+        } else {
+          // looks for the isSitting variable up the line of scope, 
+          // if it doesn't find it creates a global variable on the window object
+          isSitting = true;
+          return "yes hooman i'll do a sit";
+        }
+    }
+}
+```
+
+Referencing the property name alone has unintended behavior and causes errors. The property name alone does not grab us the property value.
+
+-
+
+## The This Keyword
+
+To grab the value of a property off the current object, use the ``this`` keyword. 
+
+```javascript
+let dog = {
+    isSitting = false;
+    speak() {
+        return 'bork';
+    }
+    sit() {
+        if(this.isSitting) {
+          return "already sitting";
+        } else {
+          this.isSitting = true;
+          return "yes human i'll do a sit";
+        }
+    }
+}
+```
+
+In Javascript, ``this`` refers to the object we call it inside.
+
+-
+-
+
+## Iterators
+
+-
+
+Loops and arrays are best friends. We can use a loop to visit each element in the array
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+for(let i = 0; i < myFavoriteThings.length; i++) {
+    // do something with the current element in the array
+    console.log(myFavoriteThings[i]);
+}
+```
+
+-
+
+There are quite a few scenarios in which we may need to visit each element in an array.
+
+Arrays have a few built in ``methods`` that we can use to to accomplish common array tasks.
+
+-
+
+## Array iterator syntax
+
+```javascript
+arr.method(callback(currentElement, index, currentArray) {
+    //your iterator
+})
+```
+
+* ```arr``` - The array you are operating on
+
+* ``method`` - The method you want to execute. Examples include ``forEach``, ``filter``, ``map`` and more.
+
+* ``callback`` - Function to execute for each element. The callback functions for iterator methods typical accepts three arguments, ``currentElement``, ``index``, and ``currentArray``.
+
+-
+
+```javascript
+arr.method(callback(currentElement, index, currentArray) {
+    //your iterator
+})
+```
+
+* ``currentElement`` - Mandatory parameter. The value of the current element being processed in the array.
+
+* ``index`` - Optional parameter. The index of the current element being processed in the array.
+
+* ``currentArray`` - Optional parameter. The array that forEach() is being applied to. I.E. ``arr``.
+
+-
+
+## Callback Functions
+
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+```javascript
+function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+
+processUserInput(greeting);
+```
+
+Array iterators take our callback functions and use them in a meaningful way. 
+
+-
+
+``.forEach()`` is used to execute the same code for every element in an array.
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+myFavoriteThings.forEach(element => {
+    console.log(element);
+})
+```
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+for(let i = 0; i < myFavoriteThings.length; i++) {
+    // do something with the current element in the array
+    console.log(myFavoriteThings[i]);
+}
+```
+
+-
+
+``.map()`` creates a new array with the results of calling a provided callback function on every element in old array.
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+
+let copy = myFavoriteThings.map(element => {
+    return element;
+})
+```
+
+```javascript
+let myFavoriteThings = ['Donuts', 42, true, 'Pizza'];
+let copy = []
+
+for(let i = 0; i < myFavoriteThings.length; i++) {
+    copy.push(myFavoriteThings[i]);
+}
+```
+-
+
+``.filter()`` checks every element in an array against a conditional to see if it meets a certain criteria,
+then returns a new array with each element that meet that condition.
+
+```javascript
+let users = [{name: 'Dominique', age: 26}, {name: 'Sonja', age: 13}, {name: 'Nyla', age: 18}];
+let adultUsers = [];
+
+for(let i = 0; i < myFavoriteThings.length; i++) {
+  if(users[i].age >= 18) {
+    adultUsers.push(users[i]);
+  }
+}
+```
+
+```javascript
+let users = [{name: 'Dominique', age: 26}, {name: 'Sonja', age: 13}, {name: 'Nyla', age: 18}];
+
+let adultUsers = users.filter(user => {
+    return user.age >= 18; 
+})
+```
+-
+
+Iterators help us create clean, semantic code.
+
+You can find more iterators and other array methods on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a>
