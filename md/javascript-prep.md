@@ -1534,10 +1534,10 @@ Often, we want our methods to interact with properties that exist on the object 
 ```javascript
 // ES6
 let dog = {
-    isSitting: false;
+    isSitting: false,
     speak() {
         return 'bork';
-    }
+    },
     sit() {
         // ReferenceError: isSitting is not defined
         if(isSitting) {
@@ -1556,10 +1556,10 @@ let dog = {
 ```javascript
 // ES6
 let dog = {
-    isSitting: false;
+    isSitting: false,
     speak() {
         return 'bork';
-    }
+    },
     sit() {
         // ReferenceError: isSitting is not defined
         if(isSitting) {
@@ -1584,10 +1584,10 @@ To grab the value of a property off the current object, use the ``this`` keyword
 
 ```javascript
 let dog = {
-    isSitting = false;
+    isSitting: false,
     speak() {
         return 'bork';
-    }
+    },
     sit() {
         if(this.isSitting) {
           return "already sitting";
@@ -1745,3 +1745,616 @@ let adultUsers = users.filter(user => {
 Iterators help us create clean, semantic code.
 
 You can find more iterators and other array methods on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a>
+
+-
+-
+
+## Classes
+
+-
+
+## Object Review
+
+JavaScript is an object-oriented programming (OOP) language we can use to model real-world items and their ``idenity``, ``state``, and ``behavior``.
+
+We model these items using ``JavaScript objects`` that contain ``properties`` that represent an item's identity, state, and behavior.
+
+Groups of similar, real world items share properties. The values of these properties can be consistent, or vary. 
+
+-
+
+## Object Review
+
+```javascript
+let corgi = {
+    breed: 'corgi',
+    name: 'snuffles',
+    speak() {
+        return 'bork';
+    }
+}
+
+let corgi2 = {
+    breed: 'corgi',
+    name: 'cuddles',
+    speak() {
+        return 'bork';
+    }
+}
+
+let yorki = {
+    breed: 'yorki',
+    name: 'gadget',
+    speak() {
+        return 'bork';
+    }
+}
+
+let yorki2 = {
+    breed: 'yorki',
+    name: 'wrinkle',
+    speak() {
+        return 'bork';
+    }
+}
+```
+We can avoid repeated code and create similar objects using ``classes``.
+
+-
+
+## Classes
+
+Classes are the **blueprints** for objects. Rather than us creating objects directly, we can use classes as blueprints for creating objects.
+
+```javascript
+class Dog {
+    constructor(breed, name) {
+        this.breed = breed;
+        this.name = name;
+    }
+    
+    speak() {
+        return 'bork';
+    }
+}
+
+let corgi = new Dog('corgi', 'snuffles');
+let corgi2 = new Dog('corgi', 'cuddles');
+let yorki = new Dog('yorki', 'gadget');
+let yorki2 = new Dog('yorki', 'wrinkle');
+```
+
+-
+
+## Declaring Classes
+
+We use the ``class`` keyword before the class name to declare a class.
+
+We wrap the instructions for the class within a set of curly braces ``class Dog { }``, similar to objects.
+
+```javascript
+class Dog {
+    constructor(breed, name) {
+        this.breed = breed;
+        this.name = name;
+    }
+    
+    speak() {
+        return 'bork';
+    }
+}
+```
+
+**Naming conventions**: Classes are capitalized to distinguish them from variables.
+
+-
+
+## Using Classes To Create Objects
+
+We use classes to create objects, or ``instances`` of a class.
+
+We create these unique instances using the ``new`` keyword which generates for us a new object using that class.
+
+```javascript
+let corgi = new Dog('corgi', 'snuffles');
+let corgi2 = new Dog('corgi', 'cuddles');
+let yorki = new Dog('yorki', 'gadget');
+let yorki2 = new Dog('yorki', 'wrinkle');
+```
+
+Notice that using classes looks a lot like calling a function. 
+That's because when we invoke, or call, the class using its name and passing in parameters, it calls a special ``function`` called a ``constructor``.
+
+-
+
+## Constructors
+
+Classes contain a special ``method`` called a ``constructor``.
+
+Constructors are called every time we use the ``new`` keyword to create a new instance. 
+
+```javascript
+class Dog {
+    constructor(breed, name) {
+        this.breed = breed;
+        this.name = name;
+    }
+    
+    speak() {
+        return 'bork';
+    }
+}
+```
+
+-
+
+## Constructors
+
+Constructors declare the properties for our objects and set them with an initial value, with the exception of methods.
+
+```javascript
+class Student {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+        this.grades = [];
+    }
+    
+    // TO DO: Write Methods
+}
+```
+
+Remember the ``this`` keyword refers to the current object. When we use dot notation with the ``this`` keyword, we declare
+new properties on our objects. Each object created with the ``Student`` class will now have a name, email, and grades property.
+
+-
+
+## Constructors
+
+Students share properties, but the values of those properties can be vary. We can assign initial values for our properties through
+the parameters we accept in the constructor. 
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* assigns the name and email properties
+        to the specific name and email we pass in*/
+        this.name = name;
+        this.email = email;
+        
+        // default initial value for grades
+        this.grades = [];
+    }
+    
+    // TO DO: Write Methods
+}
+```
+
+We can also assign values to properties that share a default value across all objects.
+
+-
+
+## Methods
+
+The ``behavior`` of our objects is defined through methods.
+
+```javascript
+// Creating a dog through a class
+class Dog {
+    constructor(breed, name) {
+        this.breed = breed;
+        this.name = name;
+        this.hasBall = false;
+    }
+    
+    // We can list methods underneath our constructor    
+    speak() {
+        return 'bork';
+    }
+    
+    fetch() {
+        this.hasBall = true;
+    }
+}
+
+let dog = new Dog('corgi', 'snuggles');
+
+// Creating a dog object directly
+let dog2 = {
+    breed: 'corgi',
+    name: 'snuggles',
+    speak() {
+        return 'bork';
+    },
+    fetch() {
+        this.hasBall = true;
+    }
+}
+```
+
+-
+
+## Getters and Setters
+
+A common object design pattern is to include getter and setter methods as attributes.
+
+Getter and setter are special ``methods`` that get and set the properties inside of an object. Using getters and setters we can:
+
+* You can check if new data is valid before setting a property.
+* You can perform an action on the data while you are getting or setting a property.
+* You can control which properties can be set and retrieved.
+    
+-
+
+## Getters and Setters
+
+When using getters and setters, we prepended the property names with underscores (_). 
+Javascript developers *sometimes* use an underscore before a property name to indicate a property or value should not be modified directly by other code.
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* these properties should only be
+        accessed through getters and setters*/
+        this._name = name;
+        this._email = email;
+        this._grades = [];
+    }
+    
+    // TO DO: Write Getters and Setters
+}
+```
+
+-
+
+## Setters
+
+Setters are great for validating input before mutating a value.
+We create a setter by using the ``set`` keyword before the method declaration.  
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* these properties should only be
+        accessed through getters and setters*/
+        this._name = name;
+        this._email = email;
+        this._grades = [];
+    }
+    
+    set email(newEmail) {
+        if(typeof newEmail === 'string') {
+            this._email = newEmail;
+        }
+    }
+    // TO DO: Write Getter
+}
+```
+
+-
+
+## Setters
+
+We name our setters the name of the property we are trying to mutate, minus the ``_``. Setters except **exactly one** parameter, representing the value we are trying to set the property to. 
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* these properties should only be
+        accessed through getters and setters*/
+        this._name = name;
+        this._email = email;
+        this._grades = [];
+    }
+    
+    set email(newEmail) {
+        if(typeof newEmail === 'string') {
+            this._email = newEmail;
+        }
+    }
+    // TO DO: Write Getter
+}
+```
+
+-
+
+## Setters
+
+When we create a setter, a **property** of the same name is automatically created on the object. 
+The setter method is called when we try to change the value of that property using ``=``, passing in the value on the right side of the ``=`` sign.
+
+```javascript
+let student = new Student('Domi', 'doclarke71@gmail.com');
+student.email = 'dominique@zipcodewilmington.com';
+student.email = 42;
+
+console.log(student._email); // will read 'dominique@zipcodewilmington.com'
+```
+
+Because we don't yet have a ``getter``, we need to access the property we just mutated through ``_email``, which we shouldn't do. Let's fix that. 
+
+-
+
+## Getters
+
+We create a getter by using the ``get`` keyword before the method declaration.  
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* these properties should only be
+        accessed through getters and setters*/
+        this._name = name;
+        this._email = email;
+        this._grades = [];
+    }
+    
+    get email() {
+        return this._email;
+    }
+    
+    set email(newEmail) {
+        if(typeof newEmail === 'string') {
+            this._email = newEmail;
+        }
+    }
+}
+```
+
+-
+
+## Getters
+
+Getters take 0 parameters, and simply return the value of the associated property. 
+We name our getters the name of the value we're trying to return, minus the ``_``.
+
+```javascript
+class Student {
+    constructor(name, email) {
+        /* these properties should only be
+        accessed through getters and setters*/
+        this._name = name;
+        this._email = email;
+        this._grades = [];
+    }
+    
+    get email() {
+       return this._email;
+    }
+    
+    set email(newEmail) {
+        if(typeof newEmail === 'string') {
+            this._email = newEmail;
+        }
+    }
+}
+```
+
+-
+
+## Getter
+
+When we create a getter, a **property** of the same name is automatically created on the object. 
+The getter method is called when we try to access that property.
+
+```javascript
+let student = new Student('Domi', 'doclarke71@gmail.com');
+student.email = 'dominique@zipcodewilmington.com';
+student.email = 42;
+
+/* now we can use our getter, email.
+Since we aren't trying to assign it a new value,
+the getter method is called instead of the setter
+method
+*/
+console.log(student.email); // will read 'dominique@zipcodewilmington.com'
+```
+-
+
+## Inheritance
+
+Classes can borrow and extend functionality of other classes through ``inheritance``.
+
+When multiple classes share properties or methods, they become candidates for inheritance.
+
+With inheritance, you can create a parent class (also known as a superclass) with properties and methods that multiple child classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+
+-
+
+## Inheritance
+
+Let's say we want to recreate the Doggo chart. 
+Doggos share many properties, but specific doggos have different values for those properties, and sometimes even have extra properties and methods.
+
+```javascript
+class Doggo {
+    constructor(name, breed, size) {
+        this._name = name;
+        this._breed = breed;
+        this._size = size;
+    }
+    
+    // Getters and Setters
+}
+
+class Pupper extends Doggo {
+    constructor(name, breed) {
+        this._name = name;
+        this._breed = breed;
+        this._size = 'smol';
+    }
+}
+```
+-
+
+## Superclasses
+
+Since ``Pupper`` extends ``Doggo``, ``Doggo`` is the super class of ``Pupper``.
+
+``Pupper`` therefore inherits the properties and methods from ``Doggo``.
+
+Puppers share the same properties as doggos, but their size is always smol. 
+When creating a pupper, we should be able to set its name and breed, but not its size.
+
+-
+
+## Calling the superclass constructor
+
+In the previous example, we set the ``_name``, ``_breed``, and ``_size`` properties of ``Pupper`` manually, even though it extends from ``Doggo``.
+
+-
+
+## Calling the superclass constructor
+
+Doggo already has a constructor that sets these properties, and we can call it using the ``super`` method. The super method calls the superclass's constructor.
+
+```javascript
+class Doggo {
+    constructor(name, breed, size) {
+        this._name = name;
+        this._breed = breed;
+        this._size = size;
+    }
+    
+    // Getters and Setters
+}
+
+class Pupper extends Doggo {
+    constructor(name, breed) {
+       super(name, breed, 'smol');
+    }
+}
+```
+
+-
+
+## Calling the superclass constructor
+
+```javascript
+class Doggo {
+    constructor(name, breed, size) {
+        this._name = name;
+        this._breed = breed;
+        this._size = size;
+    }
+    
+    // Getters and Setters
+}
+
+class Pupper extends Doggo {
+    constructor(name, breed) {
+       super(name, breed, 'smol');
+    }
+}
+
+class Woofer extends Doggo {
+    constructor(name, breed) {
+        super(name, breed, 'big ol');
+    }
+}
+```
+-
+
+## Calling the superclass constructor
+
+We can create chains of inheritance. Sub classes can also add properties or methods not available on its superclass.
+
+```javascript
+class Doggo {
+    constructor(name, breed, size) {
+        this._name = name;
+        this._breed = breed;
+        this._size = size;
+    }
+    
+    // Getters and Setters
+}
+
+class Woofer extends Doggo {
+    constructor(name, breed) {
+        super(name, breed, 'big ol');
+    }
+}
+
+class Grizlord extends Woofer {
+    constructor(name, breed) {
+        super(name, breed);
+        this._eatsAHumans = true;
+    }
+    
+    eatHuman(human) {
+        human.isDead = true;
+    }
+}
+```
+
+-
+
+## Static methods
+
+Static methods are methods that **do not** operate on instance properties. 
+Because they do not operate on instance properties, we do not need to create a new object to use these methods.
+We can use these methods directly on the class.
+
+```javascript
+// Notice how we did not create a new Date object. We simply used the date class
+let date = Date.now();
+```
+
+-
+
+## Static methods
+
+Every time you call a static method, you should expect the same output when providing the same input.
+
+```javascript
+class Calculator {
+    constructor() {
+        this.memory = 0;
+    }
+    
+    static add(x, y) {
+        return x + y;
+    }
+    
+    saveToMemory(x) {
+        this.memory = x;
+    }
+}
+
+let sum = Calculator.add(2, 2);
+
+// in order to use memory, we need to create an instance of a calculator
+let calc = new Calculator();
+
+let sum2 = calc.add(2, 2);
+calc.addToMemory(sum2);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
