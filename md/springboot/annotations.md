@@ -11,11 +11,11 @@ Spring looks for classes on the class path configured for different jobs. We can
 
 ## SpringBootApplication
 
-The Spring boot application annotation is actually a few different annotations wrapped up into one. 
+The `@SpringBootApplication` annotation is actually a few different annotations wrapped up into one. 
 
-* EnableAutoConfiguration - enables auto-configuration mechanism
-* ComponentScan - scans for components in the package the class is located
-* Configuration: allow to register extra beans in the context or import additional configuration classes
+* @EnableAutoConfiguration
+* @ComponentScan
+* @Configuration
 
 -
 
@@ -57,7 +57,8 @@ A `@Repository` is a type of Component that will be discovered with `@ComponentS
 a repository is a mechanism for encapsulating storage, retrieval, and search behavior.
 
 ```Java
-@Repository //Responsible for interacting with the database to collect and store User objects
+@Repository //Responsible for interacting with the database to 
+			//collect and store User objects
 public interface BakerRepository extends CrudRepository<User, Long> {
 }
 ```
@@ -114,10 +115,10 @@ RequestMapping defaults to RequestMethod.GET for its verb, but can take any verb
 
 There are also shortcuts for these
 
-* `GetMapping`
-* `PostMapping`
-* `PutMapping`
-* `DeleteMapping`
+* `@GetMapping`
+* `@PostMapping`
+* `@PutMapping`
+* `@DeleteMapping`
 
 -
 
@@ -146,10 +147,10 @@ Sometimes a client will send an HTTP message with a body of data for Spring to c
 ```Java
 @PostMapping("/users")
 public ResponseEntity<User> create(@RequestBody User user) {
-	// When a client sends us a user to store, we first have to map it
-	// into a user object. Because we use the @RequestBody annotation
-	// Spring will kindly do this for us. From here we can simply persist
-	// the user with our userService
+	// When a client sends us a user to store, we first have to map
+	// it into a user object. Because we use the @RequestBody 
+	// annotation Spring will kindly do this for us. From here we 
+	// can simply persist the user with our userService
     return new ResponseEntity<>(userService.create(user));
 }
 ```
@@ -165,12 +166,16 @@ By default, any `@Component` will be in the Application Context
 ## Autowired
 
 ```Java
-// Here we are creating a UserController. That controller requires the UserService to function, so we will tell Spring to autowire it in
+// Here we are creating a UserController. That controller requires
+// the UserService, so we will tell Spring to autowire it in
 @Controller
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private MathService mathService;
 
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> show(@PathVariable Long id) {
@@ -193,7 +198,8 @@ public class UserController {
 	private UserService userService;
 	private MathService mathService;
 
-	// We can also wire in multiple dependencies through the constructor
+	// We can also wire in multiple dependencies 
+	// through the constructor
 	@Autowired
 	public UserController(UserService userService, MathService mathService)
 	{
