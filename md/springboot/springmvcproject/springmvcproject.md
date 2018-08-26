@@ -19,24 +19,24 @@
 * This decoupling allows easy code reuse and parallel development
 
 
-
+-
 -
 ## MVC Component Diagram
 <img src = "mvc diagram.png">
 
 
-
+-
 -
 ## MVC Component Conversation
-> `View:` "Hey, controller, the user just told me they want item 4 deleted."
+* `View:` "Hey, controller, the user just told me they want item 4 deleted."
 
-> `Controller:` "Hmm, having checked their credentials, they're allowed to do that... Hey, model, I want you to get item 4 and do whatever you do to delete it."
+* `Controller:` "Hmm, having checked their credentials, they're allowed to do that... Hey, model, I want you to get item 4 and do whatever you do to delete it."
 
-> `Model:` "Item 4... got it. It's deleted. Back to you, Controller."
+* `Model:` "Item 4... got it. It's deleted. Back to you, Controller."
 
-> `Controller:` "Here, I'll collect the new set of data. Back to you, view."
+* `Controller:` "Here, I'll collect the new set of data. Back to you, view."
 
-> `View:` "Cool, I'll show the new set to the user now."
+* `View:` "Cool, I'll show the new set to the user now."
 
 
 
@@ -55,14 +55,15 @@
 
 * Class representation of a data relation
 	* Often representative of a single row of a table in the database
-
-
+-
+-
 ### Value Objects
 * Nearly all **value objects** in an MVC archetype will be `Model` objects.
 	* A _value object_ is an object representative of an entity whose equality is not based on identity. Rather, two _value objects_ are equal when they have the same encapsulated values, not necessarily being the same object.
 	* `String` is an example of a value object in java
 
-
+-
+-
 ### Models and Spring-Convention
 * When designing an MVC Spring archetype, it is conventional that for every `Entity` class there is a respective
 	* Controller
@@ -149,6 +150,11 @@ public class Person {
 * Handles incoming requests, supplies outgoing response
 * Responsible for updating and responding to the View
 * Operates View-agnostically; Does not need to know anything about the view
+
+
+-
+-
+## Controller Component
 * Should not contain  business logic; Rather its behavior should be dependent on the `Service` object provided to it upon construction
 * Methods longer than 2 lines should have careful reconsideration!
 	* Controller method template:
