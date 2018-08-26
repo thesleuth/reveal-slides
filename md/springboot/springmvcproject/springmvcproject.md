@@ -1,4 +1,3 @@
--
 # Spring MVC Projects
 
 
@@ -13,7 +12,12 @@
 		* **Not implemented using Spring technology**
 	* Controller
 		* Handles incoming requests and supplies outgoing responses
+
+-
+-
+## Model View Controller (MVC)
 * This decoupling allows easy code reuse and parallel development
+
 
 
 -
@@ -50,7 +54,7 @@
 * Synonymous to an `Entity` in Spring context
 
 * Class representation of a data relation
-	* Often representative of a single row of a table in the database 
+	* Often representative of a single row of a table in the database
 
 
 ### Value Objects
@@ -58,7 +62,7 @@
 	* A _value object_ is an object representative of an entity whose equality is not based on identity. Rather, two _value objects_ are equal when they have the same encapsulated values, not necessarily being the same object.
 	* `String` is an example of a value object in java
 
-	
+
 ### Models and Spring-Convention
 * When designing an MVC Spring archetype, it is conventional that for every `Entity` class there is a respective
 	* Controller
@@ -88,12 +92,12 @@ public class Person {
 -
 -
 ### Example Model Object (Database)
- <table> 
+ <table>
   <tr><td>ID</td><td>FNAME</td><td>LNAME</td></tr>
   <tr><td>0</td><td>Leon</td><td>Hunter</td></tr>
   <tr><td>1</td><td>Wilhem</td><td>Alcivar</td></tr>
   <tr><td>2</td><td>Dominique</td><td>Clarke</td></tr>
-</table> 
+</table>
 
 
 
@@ -157,11 +161,3 @@ public class Person {
 -
 ### Example of Controller Class (Java)
 <img src = "PersonController.png">
-
-
-
-
-
-
-
-
