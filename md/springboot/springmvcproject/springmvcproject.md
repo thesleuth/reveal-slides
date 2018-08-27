@@ -22,7 +22,7 @@
 -
 -
 ## MVC Component Diagram
-<img src = "mvc diagram.png">
+<img src = "https://raw.githubusercontent.com/Zipcoder/reveal-slides/master/md/springboot/springmvcproject/mvc%20diagram.png">
 
 
 -
@@ -133,7 +133,7 @@ public class Person {
 -
 -
 ### Example of Service Class (Java)
-<img src = "PersonService.png">
+<img src = "https://raw.githubusercontent.com/Zipcoder/reveal-slides/master/md/springboot/springmvcproject/PersonService.png">
 
 
 
@@ -166,4 +166,4 @@ public class Person {
 -
 -
 ### Example of Controller Class (Java)
-<img src = "PersonController.png">
+<img src = "https://raw.githubusercontent.com/Zipcoder/reveal-slides/master/md/springboot/springmvcproject/PersonController.png">
