@@ -166,7 +166,7 @@ public class PersonService {
         person.setFname(fname);
         return repository.save(person);
     }
-		// ... omitted for brevity
+    // ... other methods omitted for brevity ...
 }
 ```
 
@@ -198,4 +198,21 @@ public class PersonService {
 -
 -
 ### Example of Controller Class (Java)
-<img src = "https://raw.githubusercontent.com/Zipcoder/reveal-slides/master/md/springboot/springmvcproject/PersonController.png">
+```java
+@RestController
+public class PersonController {
+    private PersonService service;
+
+    @Autowired
+    public PersonController(PersonService service) {
+        this.service = service;
+    }
+
+    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    public ResponseEntity<?> post(@RequestBody Person person) {
+        person = service.post(person);
+        return new ResponseEntity<>(person, HttpStatus.CREATED);
+    }
+    // ... other methods omitted for brevity ...
+}
+```
