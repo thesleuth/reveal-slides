@@ -151,7 +151,24 @@ public interface PersonRepo extends CrudRepository<Person, Long> {
 -
 -
 ### Example of Service Class (Java)
-<img src = "https://raw.githubusercontent.com/Zipcoder/reveal-slides/master/md/springboot/springmvcproject/PersonService.png">
+```java
+@Service
+public class PersonService {
+    private PersonRepository repository;
+
+    @Autowired
+    public PersonService(PersonRepository repository) {
+        this.repository = repository;
+    }
+
+    public Person post(Person person) {
+        String fname = person.getFname().toUpperCase();
+        person.setFname(fname);
+        return repository.save(person);
+    }
+		// ... omitted for brevity
+}
+```
 
 
 
@@ -174,10 +191,7 @@ public interface PersonRepo extends CrudRepository<Person, Long> {
 -
 ## Controller Component
 * Should not contain  business logic; Rather its behavior should be dependent on the `Service` object provided to it upon construction
-* Methods longer than 2 lines should have careful reconsideration!
-	* Controller method template:
-		1. perform respective service method & get return-value
-		2. Construct response with return-value and HTTP status code
+
 
 
 
