@@ -103,7 +103,26 @@ public class Person {
 
 
 
+-
+## Repository components
+* Responsible for bridging communication between application and database by performing `CRUD` operations.
+* The 4 `CRUD` operations are
+	* `Create` - Creates and registers a new instance to the backend service
+	* `Read` - Reads a new instance from the backend service
+	* `Update` - Updates an existing instance from the backend service
+	* `Delete` - Removes an instance from the backend service
 
+
+
+-
+## Example of a Repository Classs
+* Spring will implement this repository to interact with the configured database
+
+```java
+@Repository
+public interface PersonRepo extends CrudRepository<Person, Long> {
+}
+```
 
 
 
@@ -119,7 +138,6 @@ public class Person {
 * Each service operation is considered a _transaction_ by the user.
 	* a single transaction can involve multiple operations of insert/update/delete to a database
 * Mediates communication between controller and _repository_.
-	* A _repository_ is responsible for bridging communication between application and database by performing `CRUD` operations.
 
 -
 -
