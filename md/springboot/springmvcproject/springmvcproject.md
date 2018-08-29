@@ -51,15 +51,15 @@
 
 -
 ## Model Component
-* Synonymous to an `Entity` in Spring context
-
 * Class representation of a data relation
 	* Often representative of a single row of a table in the database
+	* Often synonymous to an `Entity` in Spring context
+
 -
 -
 ### Value Objects
 * Nearly all **value objects** in an MVC archetype will be `Model` objects.
-	* A _value object_ is an object representative of an entity whose equality is not based on identity. Rather, two _value objects_ are equal when they have the same encapsulated values, not necessarily being the same object.
+	* A _value object_ is considered equal based on encapsulated values, not necessarily being the same object.
 	* `String` is an example of a value object in java
 
 -
