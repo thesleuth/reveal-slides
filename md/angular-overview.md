@@ -575,6 +575,191 @@ export class TodoListComponent {
 -
 -
 
+## Angular Router
+
+-
+
+## Configuring Routes
+
+```javascript
+import { NgModule }              from '@angular/core';
+import { RouterModule, Routes }  from '@angular/router';
+ 
+import { CrisisListComponent }   from './crisis-list.component';
+import { HeroListComponent }     from './hero-list.component';
+import { PageNotFoundComponent } from './not-found.component';
+
+const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+-
+
+## appRoutes
+
+Our ``const`` ``appRoutes`` defines an array of routes. Each route is an object that contains data about that route, including it's path and the component it should route to.
+
+```javascript
+const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
+```
+-
+
+## Path Variables
+
+We can define path variables (and later use those values in our components) through colon notation. ``:id``. Defines a path variable named ``id``.
+
+```javascript
+{ path: 'hero/:id', component: HeroDetailComponent },
+```
+-
+
+## Redirecting
+
+We can redirect a route using the ``redirectTo`` property.
+ 
+A redirect route requires a pathMatch property to tell the router how to match a URL to the path of a route. In this app, the router should select the route to the HeroListComponent only when the entire URL matches '', so set the pathMatch value to 'full'.
+```javascript
+{ path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+},
+{ path: '**', component: PageNotFoundComponent }
+```
+-
+
+## Wildcard Routes
+
+``**`` matches any route not listed in the routes configuration.
+
+```javascript
+{ path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+},
+{ path: '**', component: PageNotFoundComponent }
+```
+-
+
+## Imports
+
+The ``appRoutes`` array of routes describes how to navigate. Pass it to the ``RouterModule.forRoot`` method in the module ``imports`` to configure the router.
+
+```javascript
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+-
+
+## Exports
+
+Re-Export the Angular RouterModule by adding it to the module exports array. By re-exporting the RouterModule here and importing AppRoutingModule in AppModule, the components declared in AppModule will have access to router directives such as RouterLink and RouterOutlet.
+
+`````javascript
+@NgModule({
+    imports: [
+      RouterModule.forRoot(appRoutes)
+    ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
+`````
+-
+
+## Importing into AppModule
+
+To use your ``AppRoutingModule``, import it into your ``AppModule``.
+
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app.routing.module';
+
+@NgModule({
+  declarations: [
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+-
+
+## Router Link
+
+Using the routerLink directive, we can navigate to a new route without refreshing the page.
+
+We can use data interpolation within our routes using moustache notation.
+
+```html
+<div ngFor="let hero of heros">
+    <a routerLink="/hero/{{hero.id}}">More info about {{hero.name}}</a>
+</div>
+```
+-
+
+## Accessing Router Params
+
+We can access Url Path Variables (also known as Route params), using ``ActivatedRoute``. 
+
+We import it first and then inject it into the constructor of BlogComponent. It exposes an Observable which we can subscribe to, like so:
+
+```javascript
+import { ActivatedRoute } from "@angular/router";
+
+@Component({
+    selector: 'app-sample',
+    templateUrl: './app-sample.component.html'
+})
+export SampleComponent() {
+    constructor(private route: ActivatedRoute) {
+        this.route.params.subscribe( params => console.log(params) );
+    }
+}
+```
+-
+
 <img src="https://i.pinimg.com/736x/2c/ac/ae/2cacae63626e91d6887608bf51217907.jpg">
 
 
