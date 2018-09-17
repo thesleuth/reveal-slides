@@ -726,6 +726,17 @@ export class AppModule { }
 ```
 -
 
+## Router Outlet
+
+Add ``<router-outlet></router-outlet>`` where you want your routes to be loaded.
+
+```html
+<!-- a great place to add this is the root app component -->
+<router-outlet></router-outlet>
+```
+
+-
+
 ## Router Link
 
 Using the routerLink directive, we can navigate to a new route without refreshing the page.
