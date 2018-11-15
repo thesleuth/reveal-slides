@@ -197,14 +197,14 @@ class DemoSquareMaker {
 `filter` yields a new stream with <br>elements that match the specified criteria
 
 ```Java
-public Stream<String> getStringsLongerThan(String[] arr, int length)
-{
-    return Arrays.stream(stringArray)
-            .filter(this::stringIsLongerThanX);
+public Stream<String> getStringsLongerThan(String[] arr, int length) {
+    return Arrays
+            .stream(stringArray)
+            .filter(this::stringIsLongerThan4);
 }
 
-public boolean stringIsLongerThanX(String str, int x) {
-    return str.length() < x;
+public boolean stringIsLongerThan4(String str) {
+    return str.length() > 4;
 }
 ```
 
@@ -214,9 +214,9 @@ public boolean stringIsLongerThanX(String str, int x) {
 
 ```Java
 public List<Integer> mapArrayLengths(String[] arr) {
-    Stream<String> words = Arrays.stream(arr);
-
-    List<Integer> sizes = words.map(this::length)
+    return Arrays
+            .stream(arr)
+            .map(this::length)
             .collect(Collectors.toList());
 }
 
@@ -268,7 +268,7 @@ public Stream<String> sort(String[] words) {
 }
 
 public int compareStringsLength(String str1, String str2) {
-    return str1.length() = str2.length();
+    return str1.length() - str2.length();
 }
 ```
 
@@ -308,7 +308,7 @@ public Optional<String> getMax(String[] stringArray) {
 }
 
 /** @return longest String object in an array using a stream */
-public Optional<String> getMax(String[] stringArray) {
+public Optional<String> getMin(String[] stringArray) {
     return Arrays.stream(stringArray).min(String::compareToIgnoreCase);
 }
 ```
@@ -334,8 +334,10 @@ public Optional<String> getRandom(String[] stringArray) {
 * The `reduce` method is a general mechanism for computing a value from a stream.
 
 ```Java
-public void sum(Integer[] numbers) {
-    Optional<Integer> sum = Stream.of(numbers).reduce((x, y) -> x + y);
+public Integer sum(Integer[] numbers) {
+    Optional<Integer> result = Stream.of(numbers).reduce(Integer::sum);
+    Integer sum = result.get();
+    return sum;
 }
 ```
 -
@@ -343,8 +345,9 @@ public void sum(Integer[] numbers) {
 * The `reduce` method is a general mechanism for computing a value from a stream.
 
 ```Java
-public void sum(Integer[] numbers) {
-  Integer sum2 = Stream.of(numbers).reduce(10, (x, y) -> x + y);
+public Integer sum(Integer[] numbers) {
+  Integer sum = Stream.of(numbers).reduce(10, Integer::sum);
+  return sum;
 }
 ```
 
@@ -379,7 +382,7 @@ List<String> list = words.collect(Collectors.toList());
 
 ```java
 Stream<String> words = Stream.of("The", "Quick", "Brown", "Fox");
-       Set<String> list = words.collect(Collectors.toSet());
+Set<String> list = words.collect(Collectors.toSet());
 ```
 
 -
@@ -411,16 +414,10 @@ public Map<String, List<Locale>> groupingByDemo() {
 `.partitioningBy()` yields a Map that contains two groups, one for true values and another for false values.
 
 ```Java
-public void partitionedStream() {
-
-    Stream<String> words = 
-        Stream.of("The", "Quick", "Brown", "Fox");
-
-    Map<Boolean, List<String>> partitioned = words.collect(
-            Collectors.partitioningBy(this::lengthIsGreaterThan4)
-        );
-
-
+public Map<Boolean, List<String>> partitionedStream() {
+    return Stream
+            .of("The", "Quick", "Brown", "Fox")
+            .collect(Collectors.partitioningBy(this::lengthIsGreaterThan4));
 }
 
 public boolean lengthIsGreaterThan4(String x) {
@@ -590,13 +587,15 @@ public class PrimitiveStreams {
 
 ```Java
 class Demo {
-	public void demo(Stream<String> words) {
-		int[] shortWords = new int[12];
-		words.parallelStream().forEach(
-			s -> { if(s.length <12) shorts[s.length()]++; });
-			// Error - race condition!
-		System.out.println(Arrays.toString(shortWords));
-	}
+  public void demo(List<String> words) {
+      int[] shortWords = new int[12];
+      words.parallelStream().forEach(s -> {
+          if (s.length() < 12) {
+              shortWords[s.length()]++;
+          }});
+      // Error - race condition!
+      System.out.println(Arrays.toString(shortWords));
+  }
 }
 ```
 * The function passed to `forEach` runs concurrently in multiple threads, each updating a shared array.
@@ -613,7 +612,8 @@ class Demo {
 ```Java
 class Demo {
 	public Map<Integer, Long> wordCountMap(Stream<String> words) {
-		Map<Integer, Long> shortWordCounts = words.paralellStream()
+		return words
+      .paralellStream()
 			.filter(s -> s.length() < 10)
 			.collect(groupingBy(String::length, counting()));
 	}
