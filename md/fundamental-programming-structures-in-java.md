@@ -834,7 +834,7 @@ if/else if
 ```
 if (condition) {
     statement1
-} else (condition2) {
+} else if (condition2) {
     statement2
 } else {
     statement3
@@ -842,7 +842,7 @@ if (condition) {
 
 if (klingonShip.isAttacking() == true) {
   firePhotonTorpedoes();
-} else (romulanShip.isUncloaking() == true) {
+} else if (romulanShip.isUncloaking() == true) {
   firePhaserSpread();
 } else {
   playWithTribble();
