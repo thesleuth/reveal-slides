@@ -160,7 +160,7 @@ https://barkbuddy.com/
 
 ### Tinder for X - Bark Buddies
 
-* Who is listing the puppies?
+* Who is enlisting the puppies?
 * What does liking a puppy actually do?
 * How do local shelters vet potential adopters?
 * Are there services that already do this?
