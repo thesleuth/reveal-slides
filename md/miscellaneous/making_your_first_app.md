@@ -9,7 +9,7 @@ A successful app attempts to solve a problem with some task that a computer can 
 * Supplying Data
 * Giving Feedback
 * Setting Reminders
-* Asking for inforation from others
+* Asking for information from others
 * Performing Repetitive tasks
 
 -
