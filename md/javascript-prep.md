@@ -246,7 +246,7 @@ let totalDonutRating = numberOfDonuts * donutRating;
  Because JavaScript uses quotes to begin and end strings, if you want to use quotes in a string, you need to *escape* it.
  
  ```javascript
- let sentence = 'Dominique\'s donut shop is the best donut shop.'
+ let sentence = 'Jawn\'s donut shop is the best donut shop.'
  ```
 -
  
@@ -254,8 +254,8 @@ let totalDonutRating = numberOfDonuts * donutRating;
  
  We can *concatenate* strings using the ``+`` operator.
  ```javascript
- let firstName = "Dominique";
- let lastName = "Clarke";
+ let firstName = "Jawn";
+ let lastName = "Doe";
  let fullName = firstName + " " + lastName;
  ```
  
@@ -263,9 +263,9 @@ let totalDonutRating = numberOfDonuts * donutRating;
  
  ```javascript
  let fullName = "";
- fullName += "Dominique"
+ fullName += "Jawn"
  fullName += " ";
- fullName += "Clarke"
+ fullName += "Doe"
  ```
 
 -
@@ -988,7 +988,7 @@ Variables defined in the global scope are declared outside of a set of curly bra
 and are available throughout a program. 
 
 ```javascript
-let fullName = "Dominique Clarke";
+let fullName = "Jawn Doe";
 
 function greet() {
     return "Hello " + fullName;
@@ -1020,7 +1020,7 @@ This can create unintended consequences.
 
 -
 
-*But Dominique, I wouldn't do something silly like that.*
+*"But I wouldn't do something silly like that."*
 
 * You'll be working with a team of people, who won't understand your code as well as you do.
 * You'll write tens of thousands of lines of code over your career, and forget a lot what your old code is doing.
@@ -1723,7 +1723,7 @@ for(let i = 0; i < myFavoriteThings.length; i++) {
 then returns a new array with each element that meet that condition.
 
 ```javascript
-let users = [{name: 'Dominique', age: 26}, {name: 'Sonja', age: 13}, {name: 'Nyla', age: 18}];
+let users = [{name: 'Jawn', age: 26}, {name: 'Sophie', age: 13}, {name: 'Beth', age: 18}];
 let adultUsers = [];
 
 for(let i = 0; i < myFavoriteThings.length; i++) {
@@ -1734,7 +1734,7 @@ for(let i = 0; i < myFavoriteThings.length; i++) {
 ```
 
 ```javascript
-let users = [{name: 'Dominique', age: 26}, {name: 'Sonja', age: 13}, {name: 'Nyla', age: 18}];
+let users = [{name: 'Jawn', age: 26}, {name: 'Sophie', age: 13}, {name: 'Beth', age: 18}];
 
 let adultUsers = users.filter(user => {
     return user.age >= 18; 
@@ -2064,11 +2064,11 @@ When we create a setter, a **property** of the same name is automatically create
 The setter method is called when we try to change the value of that property using ``=``, passing in the value on the right side of the ``=`` sign.
 
 ```javascript
-let student = new Student('Domi', 'doclarke71@gmail.com');
-student.email = 'dominique@zipcodewilmington.com';
+let student = new Student('Jawn', 'jdoe@gmail.com');
+student.email = 'jawndoe@zipcodewilmington.com';
 student.email = 42;
 
-console.log(student._email); // will read 'dominique@zipcodewilmington.com'
+console.log(student._email); // will read 'jawndoe@zipcodewilmington.com'
 ```
 
 Because we don't yet have a ``getter``, we need to access the property we just mutated through ``_email``, which we shouldn't do. Let's fix that. 
@@ -2138,8 +2138,8 @@ When we create a getter, a **property** of the same name is automatically create
 The getter method is called when we try to access that property.
 
 ```javascript
-let student = new Student('Domi', 'doclarke71@gmail.com');
-student.email = 'dominique@zipcodewilmington.com';
+let student = new Student('Jawn', 'jdoe@gmail.com');
+student.email = 'jawndoe@zipcodewilmington.com';
 student.email = 42;
 
 /* now we can use our getter, email.
@@ -2147,7 +2147,7 @@ Since we aren't trying to assign it a new value,
 the getter method is called instead of the setter
 method
 */
-console.log(student.email); // will read 'dominique@zipcodewilmington.com'
+console.log(student.email); // will read 'jawndoe@zipcodewilmington.com'
 ```
 -
 
