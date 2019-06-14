@@ -109,10 +109,10 @@ In Javascript, it would be written as:
 ```
 
 
-When writing algebraic expressions you can choose any letter, just make sure that different numbers are assigned to different letters.
+When writing algebraic expressions, you may choose any letter, just make sure that different numbers are assigned to different letters.
 
 
-(Notice that the 1st and 2nd number are replaced with **‘n’** and **‘m’**).
+(Notice that the first and second numbers are replaced with **‘n’** and **‘m’**).
 
 -
 -
@@ -256,16 +256,16 @@ In Javascript, it would be
 
 ###Solving Equations with one Unknown
 
-An equation which doesn’t have any squared, cubed, or higher powers is called a linear equation. E.g. **3𝑥 + 2 = 14**.
+An equation which doesn’t have any squared, cubed, or higher powers is called a **linear equation.** E.g. ```3𝑥 + 2 = 14```.
 
-When solving a linear equation you are trying to find the value of the letter in the equation.
-To do this you need to make the letter the subject of the equation (i.e. leave it on its own
-at one side of the equation).
+When solving a linear equation you are trying to find the **value** of the letter in the equation.
+
+To do this, you need to make the letter the **subject** of the equation (i.e. leave it on its own, at one side of the equation).
 
 -
 ###Solving Equations with one Unknown (continued)
 
-When rearranging equations we follow the order: 
+When rearranging equations, we follow this order: 
 
 - Remove Brackets
 
@@ -275,7 +275,7 @@ When rearranging equations we follow the order:
 
 - Indices (powers)
 
-Notice that, apart from the Brackets still being 1st, this is BIDMAS in reverse because we are ‘reversing’ or ‘undoing’ the equation.
+Notice that apart from the Brackets still being first, this is BIDMAS in reverse, because we are ‘reversing’ or ‘undoing’ the equation.
 
 -
 ###Solving Equations with one Unknown
@@ -290,18 +290,57 @@ Solve the equation:
 -
 ###Solving Equations with one Unknown (continued)
 
-Starting Equation (has a multiplication). ```5a = 15```
-Divide each side by 5 to make ‘a’ the subject ```a = 3```
-We have solved this simple equation and found the answer ```a = 3.```
+Starting Equation has a multiplication: 
+
+```
+5a = 15
+```
+
+Divide each side by 5 to make ‘a’ the subject 
+
+```
+a = 3
+```
+
+We have solved this simple equation, and found the answer: 
+
+```
+a = 3.
+```
 
 -
 ###Solving Equations with one Unknown (continued)
 
-Solve the equation: 4b – 3 = 17 (Hint: collect b’s at one side, numbers at the other.)
-Starting Equation. 4b - 3 = 17
-Add 3 to each side (to get rid of the -3). 4b – 3 + 3 = 17 + 3
-Tidy up. 4b = 20
-Divide each side by 4 to leave ‘b’ on its own. b = 5
+Solve the equation: 
+
+```
+4b – 3 = 17
+```
+(Hint: collect b’s at one side, numbers at the other.)
+
+Starting Equation: 
+
+```
+4b - 3 = 17
+```
+
+Add 3 to each side (to get rid of the -3):
+
+```
+4b – 3 + 3 = 17 + 3
+```
+
+Clean it up: 
+
+```
+4b = 20
+```
+
+Divide each side by 4 to leave ‘b’ on its own:
+
+```
+b = 5
+```
 
 -
 
@@ -329,7 +368,7 @@ Add 6 to each side (to get rid of the -6):
 -
 ###Solving Equations with one Unknown (continued)
 
-Clean up: 
+Clean it up: 
 
 ```
 5y = 2y + 9
@@ -341,7 +380,7 @@ Take 2y from each side (so y’s only on left):
 5y – 2y = 2y – 2y + 9
 ```
 
-Clean up: 
+Clean it up: 
 
 ```
 3y = 9
@@ -352,69 +391,70 @@ Divide each side by 3 to leave ‘y’ on its own:
 ```
 y = 3
 ```
- Solve the equation: 14 (m + 3) - 5 (2m + 6) = 44
-First multiply out the brackets so that we can combine like terms.
 
-Starting Equation. 14(m + 3) - 5(2m + 6) = 44
+-
 
-Multiply out brackets. 14m + 42 – 10m - 30 = 44
+###Solving Equations with one Unknown (continued)
 
-Collect like terms (m’s and numbers) 4m + 12 = 44
+Solve the equation: 
 
-Take 12 from each side (to get rid of 12) 4m + 12 - 12 = 44 - 12
+```
+14 (m + 3) - 5 (2m + 6) = 44
+```
 
-Tidy up. 4m = 32
+-
 
-Divide each side by 4 to leave ‘m’ on its own. m = 8
+###Solving Equations with one Unknown (continued)
+
+First, multiply out the brackets, so that we can combine like terms.
+
+Starting Equation: 
+
+```
+14(m + 3) - 5(2m + 6) = 44
+```
+
+Multiply out brackets: 
+
+```
+14m + 42 – 10m - 30 = 44
+```
+
+Collect like terms (m’s and numbers):
+
+```
+4m + 12 = 44
+```
+
+Take 12 from each side (to get rid of 12):
+
+```
+4m + 12 - 12 = 44 - 12
+```
+
+Clean it up:  
+
+```
+4m = 32
+```
+
+Divide each side by 4 to leave ‘m’ on its own: 
+
+```
+m = 8
+```
+-
+###Solving Equations with one Unknown (continued)
 
 A quick method:
 
-Look through the above examples again and notice that 
+- Look through the above examples again and notice that 
 it looks like:
 
-When something moves to the other side of the equals sign it does the “opposite”.
+- When something moves to the other side of the equals sign it does the “opposite”. E.g. **+** becomes **-**, **x** becomes **÷** and vice versa.
 
-E.g. + becomes -, x becomes ÷ and vice versa.
 
-Notice that in the 2nd example, -3 disappeared from the left and became +3 on the right, in
+-
+###Solving Equations with one Unknown (continued)
 
-the 3rd example, 2y disappeared from the right and became +2y on the left etc.
-
-This method can be used to solve equations. When using this method it may help to keep
-the “=” sign lined up so that you can see when something moves from one side to the
-other.
-Examples:
-
- Solve the equation: 5b + 8 = 23 (collect b’s at one side, numbers at the other.)
-Starting Equation. 5b + 8 = 23
-+8 crosses the “=” sign and becomes -8. 5b = 23 - 8
-Tidy up. 5b = 15
-X5 crosses the “=” sign and becomes ÷5. b = 15 ÷ 5
-Final answer b = 3
-
- Solve the equation: 7t + 4 = 3t - 12 (collect t’s at one side, numbers at the other.)
-Starting Equation. 7t + 4 = 3t - 12
-+4 crosses the “=” sign and becomes -4. 7t = 3t - 12 - 4
-
-Tidy up. 7t = 3t - 16
-+3t crosses the “=” sign and becomes -3t. 7t – 3t = -16
-
-Tidy up. 4t = -16
-X4 crosses the “=” sign and becomes ÷4. t = -16 ÷ 4
-Final answer t = - 4
-
- Solve: 3(2a – 4) = 2(a + 8) (collect a’s at one side, numbers at the other.)
-
-Starting Equation. 3(2a - 4) = 2(a + 8)
-
-Multiply out brackets (to separate a’s and numbers) 6a - 12 = 2a + 16
--12 crosses the “=” sign and becomes +12. 6a = 2a + 16 + 12
-
-Tidy up. 6a = 2a + 28
-+2a crosses the “=” sign and becomes -2a. 6a – 2a = 28
-
-Tidy up. 4a = 28
-X4 crosses the “=” sign and becomes ÷4. a = 28 ÷ 4
-
-Final answer a = 7
-
+Notice that in the second example, **-3** disappeared from the left and became **+3** on the right, in the third example, **2y** disappeared from the right and became **+2y** on the left etc.
