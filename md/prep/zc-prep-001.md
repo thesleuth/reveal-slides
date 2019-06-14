@@ -429,6 +429,11 @@ Collect like terms (m’s and numbers):
 4m + 12 = 44
 ```
 
+-
+
+###Solving Equations with one Unknown (continued)
+
+
 Take 12 from each side (to get rid of 12):
 
 ```
