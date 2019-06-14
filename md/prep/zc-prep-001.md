@@ -1,9 +1,7 @@
 What we're going to cover: 
 
-Algebraic equations
+Algebraic equations &
 Javascript
-
-
 
 
 -
@@ -18,54 +16,81 @@ Algebra is about using letters in place of numbers.
 Sometimes it’s possible to work out
 what the letter represents.
 
- If you were told that 𝑥 + 4 = 10, you can probably see straight away that 𝑥 = 6.
+-
 
- If you were told that 𝑦 − 7 = 5, you can probably see straight away that 𝑦 = 12.
+If you were told that **𝑥 + 7 = 15**, you can probably see deduce that **𝑥 = 8**.
+
+If you were told that **𝑦 − 11 = 5**, you can probably see straight away that **𝑦 = 17**.
 
 These are examples of linear equations and we’ll look at them in more detail soon.
 
 -
 
 ###Writing Algebraic Expressions:
-Writing an algebraic expression is like writing a sentence in maths instead of English. You
-do this by assigning letters to numbers. An algebraic expression is a set of instructions on
+Writing an algebraic expression is like writing a sentence in a mathematical way. This is achieved by assigning letters to numbers. 
+
+An algebraic expression is a set of instructions on
 how to perform a calculation.
 
-Examples:
+-
+###Writing Algebraic Expressions (continued):
+####Example:
 
- Write the following as an algebraic expression:
-Five times a number minus three times another number.
+Write the following as an algebraic expression:
 
-First I need to assign letters to the ‘unknown’ numbers. I will call the first one ‘n’ and the
-second one ‘m’ so now I have:
-Five times n minus three times m.
+- Five times a number minus three times another number.
 
-Next I replace the words with maths symbols so that I have:
+First I need to assign letters to the **‘unknown’** numbers. We'll call the first one ‘n’ and the
+second one ‘m’ so that it is now:
 
-5 x n – 3 x m
+- Five times **n** minus three times **m**.
 
-Tidy up:
+Next, replace the words with mathematical symbols, leaving:
 
-5n – 3m This is our expression (notice that we don’t
+**5** x **n** – **3** x **m**
+
+which would be cleaned up to be: 
+
+**5n – 3m **
+
+(notice that we don’t
 need the multiplication sign as it is implied).
 
- A number divided by three: can be written as 𝒙
-𝟑
+-
 
- Half of a number plus quarter of another number: can be written 𝒙
-𝟐
-+
-𝒚
-𝟒
+In JavaScript, however, the asterisk **(*)** is used to indicate multiplication,  so it would be would be represented as such: 
 
- A number plus 5 all multiplied by 3 can be written (𝒏 + 𝟓)𝟑
+**5*n** - **3*m**
+
+
+-
+
+A number divided by three: can be written as **𝒙/𝟑**
+
+Half of a number plus quarter of another number: can be written as: 
+
+**𝒙/𝟐 + 𝒚/4**
+
+A number plus 5 all multiplied by 3 can be written as:
+
+**(𝒏 + 𝟓)𝟑**
+
+
 
 We usually put the number at the front so we could rewrite this as:
-𝟑(𝒏 + 𝟓)
 
-When writing algebraic expressions you can choose any letter but make sure that different
-numbers are assigned different letters.
-(Notice I have replaced the 1st and 2nd number with ‘n’ and ‘m’).
+**𝟑(𝒏 + 𝟓)**
+
+In Javascript, it would be written as: 
+
+**3 * (n+5)**
+
+
+When writing algebraic expressions you can choose any letter, just make sure that different numbers are assigned to different letters.
+
+
+(Notice that the 1st and 2nd number are replaced with **‘n’** and **‘m’**).
+
 -
 
 ##Academic Skills Advice
@@ -76,18 +101,38 @@ expression includes brackets then you may need to multiply out the brackets firs
 what will combine.
 Examples:
 
- Simplify the following expression: 𝟑𝒂 + 𝟕𝒃 – 𝟐𝒄 – 𝟒𝒃 – 𝟔𝒄 + 𝒂
+
+Simplify the following expression: 
+
+**𝟑𝒂 + 𝟕𝒃 – 𝟐𝒄 – 𝟒𝒃 – 𝟔𝒄 + 𝒂**
 
 Collect together any letters that are the same:
 
-Look at the a’s: 3𝑎 + 𝑎 = 4𝑎
+Look at the a’s: 
 
-Look at the b’s 7𝑏 – 4𝑏 = 3𝑏
+**3𝑎 + 𝑎 = 4𝑎**
 
-Look at the c’s −2𝑐 – 6𝑐 = −8𝑐
+Look at the b’s:
 
-Put everything together and we have: 𝟒𝒂 + 𝟑𝒃 – 𝟖𝒄
-Multiplying out Brackets:
+**7𝑏 – 4𝑏 = 3𝑏**
+
+Look at the c’s:
+
+**−2𝑐 – 6𝑐 = −8𝑐**
+
+-
+
+Put everything together and we have: 
+
+**𝟒𝒂 + 𝟑𝒃 – 𝟖𝒄**
+
+In Javascript, it would be written as:
+
+**(4 * a) + (3 * b) - (8 * c)**
+
+-
+
+###Multiplying out Brackets:
 
  Simplify the following: 𝟑𝒂 (𝒃 – 𝒄) + 𝟓𝒂𝒃
 
@@ -232,224 +277,3 @@ X4 crosses the “=” sign and becomes ÷4. a = 28 ÷ 4
 
 Final answer a = 7
 
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
--
--
-
-
-
-blah
-
--
--
-
-
-blah blah
