@@ -265,6 +265,7 @@ To do this you need to make the letter the subject of the equation (i.e. leave i
 at one side of the equation).
 
 -
+###Solving Equations with one Unknown (continued)
 
 When rearranging equations we follow the order: 
 
