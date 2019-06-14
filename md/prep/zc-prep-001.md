@@ -1,4 +1,4 @@
-## Algebraic equations & Javascript
+## Intro to Algebraic equations
 
 
 -
