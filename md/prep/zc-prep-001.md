@@ -211,8 +211,6 @@ So after multiplying out the brackets we have:
 ```
 
 -
-
--
 ###Multiplying out Brackets (continued)
 
 Simplify the following: 
@@ -306,20 +304,54 @@ Tidy up. 4b = 20
 Divide each side by 4 to leave ‘b’ on its own. b = 5
 
 -
+
 ###Solving Equations with one Unknown (continued)
 
-Solve the equation: 5y – 6 = 2y + 3 (collect y’s at one side, numbers at the other.)
-Starting Equation. 5y – 6 = 2y + 3
-Add 6 to each side (to get rid of the -6). 5y – 6 + 6 = 2y + 3 + 6
+Solve the equation: 
 
-Tidy up 5y = 2y + 9
+```
+5y – 6 = 2y + 3
+```
+(collect y’s at one side, numbers at the other.)
 
-Take 2y from each side (so y’s only on left). 5y – 2y = 2y – 2y + 9
+Starting Equation. 
 
-Tidy up. 3y = 9
+```
+5y – 6 = 2y + 3
+```
 
-Divide each side by 3 to leave ‘y’ on its own. y = 3
+Add 6 to each side (to get rid of the -6):
 
+```
+5y – 6 + 6 = 2y + 3 + 6
+```
+
+-
+###Solving Equations with one Unknown (continued)
+
+Clean up: 
+
+```
+5y = 2y + 9
+```
+
+Take 2y from each side (so y’s only on left):
+
+```
+5y – 2y = 2y – 2y + 9
+```
+
+Clean up: 
+
+```
+3y = 9
+```
+
+Divide each side by 3 to leave ‘y’ on its own:
+
+```
+y = 3
+```
  Solve the equation: 14 (m + 3) - 5 (2m + 6) = 44
 First multiply out the brackets so that we can combine like terms.
 
