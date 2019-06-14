@@ -318,6 +318,9 @@ Solve the equation:
 ```
 (Hint: collect b’s at one side, numbers at the other.)
 
+-
+###Solving Equations with one Unknown (continued)
+
 Starting Equation: 
 
 ```
