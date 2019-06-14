@@ -65,25 +65,37 @@ In JavaScript, however, the asterisk **(*)** is used to indicate multiplication,
 
 -
 
-A number divided by three: can be written as **𝒙/𝟑**
+A number divided by three: can be written as:
+
+```
+𝒙/𝟑
+```
 
 Half of a number plus quarter of another number: can be written as: 
 
-**𝒙/𝟐 + 𝒚/4**
+```
+𝒙/𝟐 + 𝒚/4
+```
 
 A number plus 5 all multiplied by 3 can be written as:
 
-**(𝒏 + 𝟓)𝟑**
+```
+(𝒏 + 𝟓)𝟑
+```
 
-
+-
 
 We usually put the number at the front so we could rewrite this as:
 
-**𝟑(𝒏 + 𝟓)**
+```
+𝟑(𝒏 + 𝟓)
+```
 
 In Javascript, it would be written as: 
 
-**3 * (n+5)**
+```
+3 * (n+5)
+```
 
 
 When writing algebraic expressions you can choose any letter, just make sure that different numbers are assigned to different letters.
@@ -92,43 +104,59 @@ When writing algebraic expressions you can choose any letter, just make sure tha
 (Notice that the 1st and 2nd number are replaced with **‘n’** and **‘m’**).
 
 -
+-
 
-##Academic Skills Advice
-###Simplifying Expressions:
+##Simplifying Expressions:
+
 Once you have an algebraic expression it can be simplified by collecting all the ‘like terms’
 together (i.e. combining things that are the same letter or combination of letters). If an
 expression includes brackets then you may need to multiply out the brackets first to see
 what will combine.
+
 Examples:
 
 
 Simplify the following expression: 
 
-**𝟑𝒂 + 𝟕𝒃 – 𝟐𝒄 – 𝟒𝒃 – 𝟔𝒄 + 𝒂**
+```
+𝟑𝒂 + 𝟕𝒃 – 𝟐𝒄 – 𝟒𝒃 – 𝟔𝒄 + 𝒂
+```
 
-Collect together any letters that are the same:
+-
+
+###Collect together any letters that are the same:
 
 Look at the a’s: 
 
-**3𝑎 + 𝑎 = 4𝑎**
+```
+3𝑎 + 𝑎 = 4𝑎
+```
 
 Look at the b’s:
 
-**7𝑏 – 4𝑏 = 3𝑏**
+```
+7𝑏 – 4𝑏 = 3𝑏
+```
 
 Look at the c’s:
 
-**−2𝑐 – 6𝑐 = −8𝑐**
+```
+−2𝑐 – 6𝑐 = −8𝑐
+```
 
 -
 
 Put everything together and we have: 
 
-**𝟒𝒂 + 𝟑𝒃 – 𝟖𝒄**
+```
+𝟒𝒂 + 𝟑𝒃 – 𝟖𝒄
+```
 
 In Javascript, it would be written as:
 
-**(4 * a) + (3 * b) - (8 * c)**
+```
+(4 * a) + (3 * b) - (8 * c)
+```
 
 -
 
