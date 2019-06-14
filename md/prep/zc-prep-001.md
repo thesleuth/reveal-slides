@@ -1,12 +1,8 @@
-What we're going to cover: 
-
-Algebraic equations &
-Javascript
+## Algebraic equations & Javascript
 
 
 -
 -
-
 
 
 ###Basic Algebra
@@ -17,41 +13,53 @@ Sometimes it’s possible to work out
 what the letter represents.
 
 -
+###Basic Algebra (continued)
 
-If you were told that **𝑥 + 7 = 15**, you can probably see deduce that **𝑥 = 8**.
+If you were told that ```𝑥 + 7 = 15```, you can probably see deduce that ```𝑥 = 8```.
 
-If you were told that **𝑦 − 11 = 5**, you can probably see straight away that **𝑦 = 17**.
+If you were told that ```𝑦 − 11 = 5```, you can probably see straight away that ```𝑦 = 17```.
 
-These are examples of linear equations and we’ll look at them in more detail soon.
+These are examples of linear equations, which we’ll look at in more detail.
 
 -
 
-###Writing Algebraic Expressions:
-Writing an algebraic expression is like writing a sentence in a mathematical way. This is achieved by assigning letters to numbers. 
+###Writing Algebraic Expressions
 
-An algebraic expression is a set of instructions on
+Writing an **algebraic expression** is like writing a sentence in a mathematical way. This is achieved by assigning letters to numbers. 
+
+An **algebraic expression** is a set of instructions on
 how to perform a calculation.
 
 -
-###Writing Algebraic Expressions (continued):
+###Writing Algebraic Expressions (continued)
 ####Example:
 
 Write the following as an algebraic expression:
 
 - Five times a number minus three times another number.
 
-First I need to assign letters to the **‘unknown’** numbers. We'll call the first one ‘n’ and the
+-
+###Writing Algebraic Expressions (continued)
+
+First, I need to assign letters to the **‘unknown’** numbers. We'll call the first one ‘n’ and the
 second one ‘m’ so that it is now:
 
 - Five times **n** minus three times **m**.
 
+-
+###Writing Algebraic Expressions (continued)
+
 Next, replace the words with mathematical symbols, leaving:
 
-**5** x **n** – **3** x **m**
+```
+5 x n – 3 x m
+```
 
 which would be cleaned up to be: 
 
-**5n – 3m **
+```
+5n – 3m 
+```
 
 (notice that we don’t
 need the multiplication sign as it is implied).
@@ -60,10 +68,13 @@ need the multiplication sign as it is implied).
 
 In JavaScript, however, the asterisk **(*)** is used to indicate multiplication,  so it would be would be represented as such: 
 
-**5*n** - **3*m**
+```
+5*n - 3*m
+```
 
 
 -
+###Writing Algebraic Expressions (continued)
 
 A number divided by three: can be written as:
 
@@ -124,7 +135,7 @@ Simplify the following expression:
 
 -
 
-###Collect together any letters that are the same:
+###Collect together any letters that are the same
 
 Look at the a’s: 
 
@@ -138,6 +149,9 @@ Look at the b’s:
 7𝑏 – 4𝑏 = 3𝑏
 ```
 
+-
+###Collect together any letters that are the same (continued)
+
 Look at the c’s:
 
 ```
@@ -145,6 +159,7 @@ Look at the c’s:
 ```
 
 -
+###Collect together any letters that are the same (continued)
 
 Put everything together and we have: 
 
@@ -159,75 +174,140 @@ In Javascript, it would be written as:
 ```
 
 -
+-
 
 ###Multiplying out Brackets:
 
- Simplify the following: 𝟑𝒂 (𝒃 – 𝒄) + 𝟓𝒂𝒃
+Simplify the following: 
+
+```
+𝟑𝒂 (𝒃 – 𝒄) + 𝟓𝒂𝒃
+```
+
+-
+
+###Multiplying out Brackets (continued)
 
 First remove the bracket. To do this you need to multiply the bit (term) outside the bracket
 by every bit (term) inside the bracket.
 
-
+```
 3𝑎 (𝑏 – 𝑐) + 5𝑎𝑏
 
 3𝑎 × 𝑏 = 3𝑎𝑏
 
 3𝑎 × – 𝑐 = − 3𝑎𝑐
+```
 
-So after multiplying out the brackets we have: 3𝑎𝑏 − 3𝑎𝑐 + 5𝑎𝑏 = 𝟖𝒂𝒃 − 𝟑𝒂𝒄
 
- Simplify the following: 𝟑(𝟒𝒚 + 𝟐) − 𝟓𝒚 + 𝟏𝟐
+-
+
+###Multiplying out Brackets (continued)
+
+So after multiplying out the brackets we have: 
+
+```
+3𝑎𝑏 − 3𝑎𝑐 + 5𝑎𝑏 = 𝟖𝒂𝒃 − 𝟑𝒂𝒄
+```
+
+-
+
+-
+###Multiplying out Brackets (continued)
+
+Simplify the following: 
+```
+𝟑(𝟒𝒚 + 𝟐) − 𝟓𝒚 + 𝟏𝟐
+```
+
+
+-
+
+###Multiplying out Brackets (continued)
+
 First remove the bracket. To do this you need to multiply the bit (term) outside the bracket
 by every bit (term) inside the bracket.
 
+```
 3 (4𝑦 + 2) − 5𝑦 + 12
 
 3 × 4𝑦 = 12𝑦
 
 3 × 2 = 6
+```
 
-So after multiplying out the brackets we have: 12𝑦 + 6 
-− 5𝑦 + 12 = 𝟕𝒚 + 𝟏𝟖
 
-(These are exactly the same
-so can add to give 8ab.)
+-
+
+###Multiplying out Brackets (continued)
+
+So after multiplying out the brackets we have: 
+
+```
+12𝑦 + 6 − 5𝑦 + 12 = 𝟕𝒚 + 𝟏𝟖
+```
+
+In Javascript, it would be
+
+```
+𝟕*𝒚 + 𝟏𝟖
+```
 
 -
 -
-###Solving Equations with one Unknown:
-An equation which doesn’t have any squared, cubed, or higher powers is called a linear
-equation. E.g. 3𝑥 + 2 = 14.
+
+###Solving Equations with one Unknown
+
+An equation which doesn’t have any squared, cubed, or higher powers is called a linear equation. E.g. **3𝑥 + 2 = 14**.
 
 When solving a linear equation you are trying to find the value of the letter in the equation.
 To do this you need to make the letter the subject of the equation (i.e. leave it on its own
 at one side of the equation).
 
+-
+
 When rearranging equations we follow the order: 
-Remove Brackets
 
-Add or subtract
+- Remove Brackets
 
-Multiply or divide
+- Add or subtract
 
-Indices (powers)
+- Multiply or divide
 
-Notice that, apart from the Brackets still being 1st, this is BIDMAS in reverse because we
-are ‘reversing’ or ‘undoing’ the equation.
+- Indices (powers)
 
-Examples:
+Notice that, apart from the Brackets still being 1st, this is BIDMAS in reverse because we are ‘reversing’ or ‘undoing’ the equation.
 
- Solve the equation: 5a = 15
-Starting Equation (has a multiplication). 5a = 15
-Divide each side by 5 to make ‘a’ the subject a = 3
-We have solved this simple equation and found the answer a = 3.
+-
+###Solving Equations with one Unknown
+#####Examples:
 
- Solve the equation: 4b – 3 = 17 (Hint: collect b’s at one side, numbers at the other.)
+Solve the equation: 
+
+```
+5a = 15
+```
+
+-
+###Solving Equations with one Unknown (continued)
+
+Starting Equation (has a multiplication). ```5a = 15```
+Divide each side by 5 to make ‘a’ the subject ```a = 3```
+We have solved this simple equation and found the answer ```a = 3.```
+
+-
+###Solving Equations with one Unknown (continued)
+
+Solve the equation: 4b – 3 = 17 (Hint: collect b’s at one side, numbers at the other.)
 Starting Equation. 4b - 3 = 17
 Add 3 to each side (to get rid of the -3). 4b – 3 + 3 = 17 + 3
 Tidy up. 4b = 20
 Divide each side by 4 to leave ‘b’ on its own. b = 5
 
- Solve the equation: 5y – 6 = 2y + 3 (collect y’s at one side, numbers at the other.)
+-
+###Solving Equations with one Unknown (continued)
+
+Solve the equation: 5y – 6 = 2y + 3 (collect y’s at one side, numbers at the other.)
 Starting Equation. 5y – 6 = 2y + 3
 Add 6 to each side (to get rid of the -6). 5y – 6 + 6 = 2y + 3 + 6
 
